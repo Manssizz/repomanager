@@ -94,8 +94,9 @@
 <?php } ?>
 
 <!-- LISTE DES REPOS ACTIFS -->
-<table class="list-repos">
-<?php 
+<!-- <table class="list-repos table-generic-blue"> -->
+<div class="repos-list-container">
+<?php
 /**
  *  Génération de la page en html et stockage en ram
  */
@@ -115,4 +116,5 @@ if (CACHE_REPOS_LIST == "yes") {
     include(__DIR__.'/repos-active-list.inc.php');
 }
 unset($repoGroups, $groupName, $repoGroupList, $rows, $row, $rowData, $repoFullInformations, $repoName, $repoDist, $repoSection, $repoEnv, $repoDate, $repoDescription, $repoSize, $repoLastName, $repoLastDist, $repoLastSection, $repoLastEnv); ?>
-</table>
+<!-- </table> -->
+</div>

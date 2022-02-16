@@ -243,9 +243,7 @@ class Group extends Model {
 
         while ($datas = $reposInGroup->fetchArray(SQLITE3_ASSOC)) $reposIn[] = $datas;
 
-        if (!empty($reposIn)) {
-            return $reposIn;
-        }
+        return $reposIn;
     }
 
     /**

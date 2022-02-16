@@ -427,19 +427,145 @@ table {
 table thead, .reposListHead { 
     font-weight: bold;
 }
-table.list-repos {
+
+.repos-list-container {
     width: 100%;
     font-size: 14px;
-    table-layout: auto !important;
-    white-space: nowrap;
-}
-table.list-repos tr.color1 td, table.list-repos tr.color1 .td-desc input[type=text] { 
-    color: #808080 !important;
 }
 
-table.list-repos tr.color2 td, table.list-repos tr.color2 .td-desc input[type=text] { 
-    color: #ffffff !important;
+.repos-list-group {
+    margin: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 2px;
+    border: 1px solid #403f3f;
+    background-color: #333333;
+    -webkit-box-shadow: 0px 10px 13px -12px #000000, 0px 0px 10px 2px rgba(0,0,0,0.15); 
+    box-shadow: 0px 10px 13px -12px #000000, 0px 0px 10px 2px rgb(0 0 0 / 15%);
 }
+
+[class^=repos-list-group-flex-div] {
+    display: grid;
+    margin-bottom: 8px;
+    background-color: #2b426e;
+    border-radius: 2px;
+    padding: 4px;
+    vertical-align: middle;
+}
+
+.repos-list-group-flex-div-redhat {
+    grid-template-columns: 200px auto auto 108px 1fr auto;
+}
+
+.repos-list-group-flex-div-debian {
+    grid-template-columns: 200px 250px auto auto 108px 1fr auto;
+}
+
+[class^=repos-list-group-flex-div] [class^="item"] {
+    padding: 8px;
+    position: relative;
+}
+
+[class^=repos-list-group-flex-div]:hover, [class^=repos-list-group-flex-div]:hover .item-desc [type=text] {
+    background-color: #263859;
+    transition-duration: 0.4s;
+}
+
+[class^=repos-list-group-flex-div]:hover input[type=checkbox] {
+    opacity: 0.8;
+    visibility: visible;
+}
+
+.item-env input[type=checkbox] {
+    vertical-align: middle;
+    margin-right: 10px;
+    opacity: 0;
+    visibility: none;
+}
+
+.item-env::after {
+    content: "⟶";
+    opacity: 0.80;
+}
+
+.item-repo {
+    font-weight: bold;
+}
+
+.item-date {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.item-dist-section-sub {
+    max-width: fit-content;
+    color: white;
+    background-color: #333333;
+    font-size: 12px;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    padding-top: 3px !important;
+    padding-bottom: 3px !important;
+    vertical-align: middle;
+    border-radius: 2px;
+    box-shadow: 0px 1px 1px 0px rgb(0 0 0 / 50%) inset, 0px 2px 2px 0px rgb(109 109 109 / 20%);
+}
+
+.item-dist-section-sub span {
+    font-size: 13px;
+}
+
+.item-date span {
+    color: white;
+    background-color: #333333;
+    font-size: 12px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    vertical-align: middle;
+    border-radius: 2px;
+    box-shadow: 0px 1px 1px 0px rgb(0 0 0 / 50%) inset, 0px 2px 2px 0px rgb(109 109 109 / 20%);
+}
+
+.item-info {
+    padding-top: 4px !important;
+    padding-bottom: 4px !important;
+    padding-left: 8px;
+}
+
+.item-info img {
+    height: 12px;
+    display: inline;
+    margin-left: 2px !important;
+    margin-right: 2px !important;
+}
+
+.item-info span {
+    font-size: 12px;
+    opacity: 0.80;
+}
+
+.item-desc {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.item-desc [type=text] {
+    background-color: #2b426e;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 .td-white-bckg span, .td-red-bckg span {
     width: 100%;
     display: block; /* pour que le width s'applique correctement */

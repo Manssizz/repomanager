@@ -19,18 +19,21 @@ if (FILTER_BY_GROUPS == "yes") {
      */
     if (!empty($groupsList)) {
         foreach($groupsList as $groupName) {
-            $listColor = 'color1'; // réinitialise à color1 à chaque groupe
-            echo "<tr colspan=\"100%\"><td><b>$groupName</b></td></tr>";
+            echo '<div class="repos-list-group">';
+
+            echo "<h3>$groupName</h3>";
 
             /**
              *  Récupération de la liste des repos du groupe
              */
             $reposList = $mygroup->listRepos($groupName);
+
             if (!empty($reposList)) {
-                /**
-                 *  Affichage de l'en-tête du tableau
-                 */
-                printHead();
+                // echo '<pre>';
+                // print_r($reposList);
+                // echo '</pre>';
+
+                $reposList = group_by("Name", $reposList);
 
                 /**
                  *  Traitement de la liste des repos
@@ -38,9 +41,9 @@ if (FILTER_BY_GROUPS == "yes") {
                 processList($reposList);
 
             } else {
-                echo '<tr><td colspan="100%">Il n\'y a aucun repo dans ce groupe</td></tr>';
+                echo '<p>Il n\'y a aucun repo dans ce groupe</p>';
             }
-            echo '<tr><td><br></td></tr>'; // saut de ligne avant chaque nom de groupe
+            echo '</div>';
         }
     }
 }
